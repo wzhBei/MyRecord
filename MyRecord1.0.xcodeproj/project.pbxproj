@@ -16,7 +16,9 @@
 		D1BC05901BCA8D5C00101884 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1BC058E1BCA8D5C00101884 /* LaunchScreen.storyboard */; };
 		D1BC059B1BCA8D5C00101884 /* MyRecord1_0Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BC059A1BCA8D5C00101884 /* MyRecord1_0Tests.m */; };
 		D1BC05A61BCA8D5C00101884 /* MyRecord1_0UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BC05A51BCA8D5C00101884 /* MyRecord1_0UITests.m */; };
-		D1BC05B51BCA91E400101884 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BC05B41BCA91E400101884 /* TabBarViewController.m */; settings = {ASSET_TAGS = (); }; };
+		D1BC05B51BCA91E400101884 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BC05B41BCA91E400101884 /* TabBarViewController.m */; };
+		D1BC05B91BCABA2400101884 /* FirstView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BC05B81BCABA2400101884 /* FirstView.m */; };
+		D1BC05BC1BCABDEC00101884 /* TabShowListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BC05BB1BCABDEC00101884 /* TabShowListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		D1BC05A71BCA8D5C00101884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1BC05B31BCA91E400101884 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		D1BC05B41BCA91E400101884 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		D1BC05B71BCABA2400101884 /* FirstView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstView.h; sourceTree = "<group>"; };
+		D1BC05B81BCABA2400101884 /* FirstView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstView.m; sourceTree = "<group>"; };
+		D1BC05BA1BCABDEC00101884 /* TabShowListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabShowListViewController.h; sourceTree = "<group>"; };
+		D1BC05BB1BCABDEC00101884 /* TabShowListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabShowListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D16876F61C53218A00DF5C6D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D16876F71C53219A00DF5C6D /* Showlist */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Showlist;
+			sourceTree = "<group>";
+		};
 		D1BC05711BCA8D5C00101884 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +126,9 @@
 		D1BC057C1BCA8D5C00101884 /* MyRecord1.0 */ = {
 			isa = PBXGroup;
 			children = (
+				D1BC05B61BCAB9F200101884 /* Home */,
+				D16876F71C53219A00DF5C6D /* Showlist */,
+				D16876F61C53218A00DF5C6D /* Helpers */,
 				D1BC05801BCA8D5C00101884 /* AppDelegate.h */,
 				D1BC05811BCA8D5C00101884 /* AppDelegate.m */,
 				D1BC05831BCA8D5C00101884 /* ViewController.h */,
@@ -146,6 +169,17 @@
 				D1BC05A71BCA8D5C00101884 /* Info.plist */,
 			);
 			path = MyRecord1.0UITests;
+			sourceTree = "<group>";
+		};
+		D1BC05B61BCAB9F200101884 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D1BC05B71BCABA2400101884 /* FirstView.h */,
+				D1BC05B81BCABA2400101884 /* FirstView.m */,
+				D1BC05BA1BCABDEC00101884 /* TabShowListViewController.h */,
+				D1BC05BB1BCABDEC00101884 /* TabShowListViewController.m */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,9 +314,11 @@
 			files = (
 				D1BC05B51BCA91E400101884 /* TabBarViewController.m in Sources */,
 				D1BC05851BCA8D5C00101884 /* ViewController.m in Sources */,
+				D1BC05BC1BCABDEC00101884 /* TabShowListViewController.m in Sources */,
 				D1BC058B1BCA8D5C00101884 /* MyRecord1_0.xcdatamodeld in Sources */,
 				D1BC05821BCA8D5C00101884 /* AppDelegate.m in Sources */,
 				D1BC057F1BCA8D5C00101884 /* main.m in Sources */,
+				D1BC05B91BCABA2400101884 /* FirstView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +542,7 @@
 				D1BC05AC1BCA8D5C00101884 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D1BC05AD1BCA8D5C00101884 /* Build configuration list for PBXNativeTarget "MyRecord1.0Tests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +551,7 @@
 				D1BC05AF1BCA8D5C00101884 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D1BC05B01BCA8D5C00101884 /* Build configuration list for PBXNativeTarget "MyRecord1.0UITests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +560,7 @@
 				D1BC05B21BCA8D5C00101884 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
