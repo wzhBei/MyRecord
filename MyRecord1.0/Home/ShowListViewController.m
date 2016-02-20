@@ -6,17 +6,42 @@
 //  Copyright © 2015年 wzhnopc. All rights reserved.
 //
 
-#import "TabShowListViewController.h"
+/*
+  1>初始化加载层级为1的Rcordmodel
+  2>
+ */
 
-@interface TabShowListViewController ()
+#import "ShowListViewController.h"
+
+@interface ShowListViewController ()
+
+@property (nonatomic, strong) RecordModel *editingRecordModel;
+
+//IBOutlets
+
 
 @end
 
-@implementation TabShowListViewController
+
+
+@implementation ShowListViewController
+
+- initWithRecordModel:(RecordModel *)recordModel
+{
+    self = [[ShowListViewController alloc] initWithNibName:@"ShowListViewController" bundle:nil];
+    self.editingRecordModel = recordModel;
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self refreshViewWithModel];
     // Do any additional setup after loading the view.
+}
+
+- (void)refreshViewWithModel
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,11 +49,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)loadNib
+{
+//    [[NSBundle mainBundle] loadNibNamed:@"TabShowListViewController" owner:self options:nil];
+//    self.
+}
+
 #pragma mark - 
 #pragma tableView DataSource
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -42,8 +74,18 @@
     return cell;
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
 #pragma mark -
 #pragma tableView Delegate
+
+- (void)tableView:tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    
+    /*记载*/
+}
+
 /*
 #pragma mark - Navigation
 
