@@ -1,9 +1,9 @@
 //
-//  BaseCoordinator.m
-//  jcomplanner
+//  RecordModel.h
+//  MyRecord1.0
 //
-//  Created by yuyanan-mac on 2015/07/22.
-//  Copyright (c) 2015年 jp.co.dreamarts. All rights reserved.
+//  Created by wzhnopc on 16/2/4.
+//  Copyright © 2016年 wzhnopc. All rights reserved.
 //
 
 #import "BaseCoordinator.h"
@@ -22,7 +22,6 @@ NSString *kIDFormat = @"%06ld";
     self = [super init];
     if (self) {
         _managerContext = context;
-        _allFlag = NO;
     }
     return self;
 }
@@ -30,9 +29,7 @@ NSString *kIDFormat = @"%06ld";
 - (instancetype)initWithContext:(NSManagedObjectContext *)context allFlag:(BOOL)allFlag
 {
     self = [self initWithContext:context];
-    if (self) {
-        _allFlag = allFlag;
-    }
+
     return self;
 }
 
@@ -45,12 +42,7 @@ NSString *kIDFormat = @"%06ld";
 
 - (void)applyConfig
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    self.requiredBulkBuilding = [defaults boolForKey:BULK_BUILDING_KEY] ? [defaults boolForKey:BULK_BUILDING_KEY] : NO;
-    self.requiredSpecialBuildingContract = [defaults boolForKey:BUILDING_SPECIALITY_KEY] ? [defaults boolForKey:BUILDING_SPECIALITY_KEY] : NO;
-    self.requiredBuildingType = [defaults integerForKey:BUILDINGTYPE_KEY] ? [defaults integerForKey:BUILDINGTYPE_KEY] : APPBuildingTypeCommon;
-    self.requiredShortTermAgreement = [defaults boolForKey:AGREEMENT_TERM] ? [defaults integerForKey:AGREEMENT_TERM] : NO;
+
 }
 
 #pragma mark -
@@ -132,40 +124,16 @@ NSString *kIDFormat = @"%06ld";
 
 - (NSMutableArray *)configuratedSubPredicates
 {
-    // 生成
     NSMutableArray *subPredicates = [NSMutableArray array];
     
-    if (self.allFlag) {
-        return subPredicates;
-    }
-    
-    // 格納
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"requiredBulkBuilding = %d",(int)self.requiredBulkBuilding];
-    [subPredicates addObject:predicate];
 
-    if (!self.requiredSpecialBuildingContract) {
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"requiredSpecialBuildingContract = NO"];
-        [subPredicates addObject:predicate];
-    }
-    
-    switch (self.requiredBuildingType) {
-        case APPBuildingTypeSDU:
-        {
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"requiredBuildingType != %d", APPBuildingTypeMDU];
-            [subPredicates addObject:predicate];
-        }
-            break;
-        case APPBuildingTypeMDU:
-        {
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"requiredBuildingType != %d", APPBuildingTypeSDU];
-            [subPredicates addObject:predicate];
-        }
-            break;
-        default:
-            break;
-    }
-    // 返す
     return subPredicates;
+}
+
+- (id)increaseNewObject
+{
+    id localObject = [NSEntityDescription insertNewObjectForEntityForName:self.entityName inManagedObjectContext:self.managerContext];
+    return localObject;
 }
 
 @end

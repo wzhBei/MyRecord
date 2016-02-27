@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
+/*
+  1>用户登录信息
+  2>
+ 
+ */
 @interface UserInfoHelper : NSObject
 
 @end

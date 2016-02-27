@@ -12,6 +12,5 @@
 @interface ShowListViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
 - initWithRecordModel:(RecordModel *)recordModel;
-@property (strong, nonatomic) IBOutlet UIView *aView;
 
 @end

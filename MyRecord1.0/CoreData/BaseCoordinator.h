@@ -1,9 +1,9 @@
 //
-//  BaseCoordinator.h
-//  jcomplanner
+//  RecordModel.h
+//  MyRecord1.0
 //
-//  Created by yuyanan-mac on 2015/07/22.
-//  Copyright (c) 2015年 jp.co.dreamarts. All rights reserved.
+//  Created by wzhnopc on 16/2/4.
+//  Copyright © 2016年 wzhnopc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -17,13 +17,6 @@
 @property (nonatomic, strong) NSManagedObjectContext *managerContext;
 @property (nonatomic, strong) NSString *entityName;
 
-//============== 属性保持用 ==============//
-@property (nonatomic) bool requiredBulkBuilding;
-@property (nonatomic) bool requiredSpecialBuildingContract;
-@property (nonatomic) APPBuildingTypeType requiredBuildingType;
-@property (nonatomic) bool requiredShortTermAgreement;
-@property (nonatomic, assign) BOOL allFlag;//subPredicate 用
-
 //============== プロパティ==============//
 - (instancetype)initWithContext:(NSManagedObjectContext *)context;
 - (instancetype)initWithContext:(NSManagedObjectContext *)context allFlag:(BOOL)allFlag;
@@ -34,5 +27,6 @@
 - (NSArray *)createOrders:(NSArray *)orders Asc:(BOOL)asc;
 - (NSArray *)orderDescriptors;
 - (NSMutableArray *)configuratedSubPredicates;
+- (id)increaseNewObject;
 
 @end

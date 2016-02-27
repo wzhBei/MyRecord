@@ -7,7 +7,20 @@
 //
 
 #import "CoredataHelper.h"
+#import "LocalRecordCoordinator.h"
+#import "RecordModel.h"
 
 @implementation CoredataHelper
+
+-(void)saveRecordWithRecordModel:(RecordModel *)recordModel
+{
+    CFUUIDRef uuidRef =CFUUIDCreate(NULL);
+    
+    CFStringRef uuidStringRef =CFUUIDCreateString(NULL, uuidRef);
+    
+    CFRelease(uuidRef);
+    
+    NSString *uniqueId = (__bridgeNSString *)uuidStringRef;
+}
 
 @end

@@ -10,4 +10,28 @@
 
 @implementation RecordModel
 
+-(instancetype)initWithDefaultValue
+{
+    self = [super init];
+    
+    [self configDefaultValues];
+    return self;
+}
+
+-(void)configDefaultValues
+{
+    if (!self.subRecords) {
+        RecordModel *model = [[RecordModel alloc] init];
+        model.projectName = @"test";
+        model.startTime = [NSDate date];
+        model.endTime = [NSDate date];
+        model.parentModel = self;
+        self.subRecords = @[model];
+    }
+}
+
+- (NSInteger)activitiesTimes
+{
+    return [self.subRecords count];
+}
 @end

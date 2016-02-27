@@ -10,4 +10,11 @@
 
 @implementation UIView (Additions)
 
+-(void)addAppBorders
+{
+    self.layer.cornerRadius = 3.0f;
+    self.layer.borderWidth = 1.0f;
+    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
+}
+
 @end

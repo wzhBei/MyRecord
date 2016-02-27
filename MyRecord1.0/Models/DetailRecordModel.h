@@ -12,7 +12,10 @@
 
 @property (nonatomic, strong) NSDate *startTime;
 @property (nonatomic, strong) NSDate *endTime;
+
 //@property (nonatomic, strong) 枚举 满意度
 @property (nonatomic, strong) NSString *descriptions;
+
+
 
 @end

@@ -10,4 +10,37 @@
 
 @implementation RecordHelper
 
+
+//SINGLETON_DEFINE(RecordHelper)
+SINGLETON_IMPL(RecordHelper)
+
+#pragma mark -
+#pragma public method
+-(NSString *)createUniqueKey
+{
+    NSString *key = @"";
+    
+    
+    
+    return key;
+}
+
+
+
+
+
+#pragma mark -
+#pragma private method
+
+
+#pragma mark - 
+#pragma setters and getters
+
+- (NSArray *)records
+{
+    if (!_records) {
+        _records = [NSArray array];
+    }
+    return _records;
+}
 @end

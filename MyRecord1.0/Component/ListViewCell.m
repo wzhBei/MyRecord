@@ -20,4 +20,13 @@
     // Configure the view for the selected state
 }
 
+-(instancetype)initFromNib
+{
+    self = [super init];
+    NSArray *subViews = [[NSBundle mainBundle] loadNibNamed:@"ListViewCell" owner:self options:nil];
+    if (subViews.count > 0) {
+        self = [subViews firstObject];
+    }
+    return self;
+}
 @end

@@ -10,4 +10,6 @@
 
 @interface UIView (Additions)
 
+-(void)addAppBorders;
+
 @end

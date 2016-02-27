@@ -8,7 +8,9 @@
 
 #import "DetailRecordModel.h"
 
+///纪录每次的信息
 @implementation DetailRecordModel
+
 
 
 @end

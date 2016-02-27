@@ -32,4 +32,7 @@
 
 + (NSDate *)dateMonths:(NSInteger)months agoFromDate:(NSDate *)referenceDate;
 
+// 秒数转化为时分秒
++(NSString*)timeformatFromSeconds:(NSInteger)seconds;
+
 @end

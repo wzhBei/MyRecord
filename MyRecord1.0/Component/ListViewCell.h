@@ -10,4 +10,5 @@
 
 @interface ListViewCell : UITableViewCell
 
+- (instancetype)initFromNib;
 @end

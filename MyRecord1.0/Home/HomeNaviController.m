@@ -7,6 +7,8 @@
 //
 
 #import "HomeNaviController.h"
+#import "RecordModel.h"
+#import "ShowListViewController.h"
 
 @interface HomeNaviController ()
 
@@ -16,6 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    ShowListViewController *firstViewController = [[ShowListViewController alloc] initWithRecordModel:nil];
+    [self.navigationBar setHidden:YES];
+    [self pushViewController:firstViewController animated:NO];
     // Do any additional setup after loading the view.
 }
 
