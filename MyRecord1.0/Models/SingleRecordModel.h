@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DetailRecordModel : NSObject
+@interface SingleRecordModel : NSObject
 
 @property (nonatomic, strong) NSDate *startTime;
 @property (nonatomic, strong) NSDate *endTime;
@@ -16,6 +16,6 @@
 //@property (nonatomic, strong) 枚举 满意度
 @property (nonatomic, strong) NSString *descriptions;
 
-
+@property (nonatomic, assign, readonly) NSInteger activityMinutes;
 
 @end

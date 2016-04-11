@@ -1,5 +1,5 @@
 //
-//  LocalRecord+CoreDataProperties.m
+//  LocalCategoryRecord+CoreDataProperties.m
 //  MyRecord1.0
 //
 //  Created by wzhnopc on 16/4/6.
@@ -9,13 +9,12 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-#import "LocalRecord+CoreDataProperties.h"
+#import "LocalCategoryRecord+CoreDataProperties.h"
 
-@implementation LocalRecord (CoreDataProperties)
+@implementation LocalCategoryRecord (CoreDataProperties)
 
-@dynamic isQuickStart;
-@dynamic localRecordID;
-@dynamic singleRecords;
-@dynamic categoryRecord;
+@dynamic categoryModelID;
+@dynamic categoryName;
+@dynamic records;
 
 @end

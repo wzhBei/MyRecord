@@ -2,7 +2,7 @@
 //  LocalRecord+CoreDataProperties.h
 //  MyRecord1.0
 //
-//  Created by wzhnopc on 16/2/20.
+//  Created by wzhnopc on 16/4/6.
 //  Copyright © 2016年 wzhnopc. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -15,12 +15,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LocalRecord (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSString *projectname;
-@property (nullable, nonatomic, retain) NSString *category;
-@property (nullable, nonatomic, retain) NSDate *startTime;
-@property (nullable, nonatomic, retain) NSDate *endTime;
-@property (nullable, nonatomic, retain) NSNumber *actionTimes;
-@property (nullable, nonatomic, retain) NSData *subActivities;
+@property (nullable, nonatomic, retain) NSNumber *isQuickStart;
+@property (nullable, nonatomic, retain) NSString *localRecordID;
+@property (nullable, nonatomic, retain) NSSet<LocalSingleRecord *> *singleRecords;
+@property (nullable, nonatomic, retain) LocalCategoryRecord *categoryRecord;
+
+@end
+
+@interface LocalRecord (CoreDataGeneratedAccessors)
+
+- (void)addSingleRecordsObject:(LocalSingleRecord *)value;
+- (void)removeSingleRecordsObject:(LocalSingleRecord *)value;
+- (void)addSingleRecords:(NSSet<LocalSingleRecord *> *)values;
+- (void)removeSingleRecords:(NSSet<LocalSingleRecord *> *)values;
 
 @end
 
